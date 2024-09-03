@@ -19,10 +19,11 @@ query {
     id
     date
     patient {
+      id
       name
-      phone
     }
     specialist {
+      id
       name
     }
     status

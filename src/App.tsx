@@ -52,13 +52,14 @@ function App(): React.ReactElement {
 
 
   const editAppointment = (appointment: IAppointment) => {
+    console.log(appointment)
     updateAppointment({
       variables: {
         id: appointment.id,
         date: appointment.date,
         status: appointment.status,
-        patient: appointment.patient.id,
-        specialist: appointment.specialist.id
+        patient: appointment.patient?.id || appointment.patient,
+        specialist: appointment.specialist?.id || appointment.specialist
       }
     })
     setShowModal(false)

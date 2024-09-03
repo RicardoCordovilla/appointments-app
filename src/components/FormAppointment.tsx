@@ -23,23 +23,22 @@ const FormAppointment = ({ appointment, closeModal, show, submitForm }: FormProp
 
     const onSubmit = async (body: IAppointment) => {
         if (!body?.date) {
-            Swal.fire({ icon: 'error', title: 'Oops...', text: 'Please select a date' }) 
+            Swal.fire({ icon: 'error', title: 'Oops...', text: 'Please select a date' })
             return
         }
-        if(!body?.patient) {
-            Swal.fire({ icon: 'error', title: 'Oops...', text: 'Please select a patient' }) 
+        if (!body?.patient) {
+            Swal.fire({ icon: 'error', title: 'Oops...', text: 'Please select a patient' })
             return
         }
-        if(!body?.specialist) {
-            Swal.fire({ icon: 'error', title: 'Oops...', text: 'Please select a specialist' }) 
+        if (!body?.specialist) {
+            Swal.fire({ icon: 'error', title: 'Oops...', text: 'Please select a specialist' })
             return
         }
-        if(!body?.status) {
-            Swal.fire({ icon: 'error', title: 'Oops...', text: 'Please select a status' }) 
+        if (!body?.status) {
+            Swal.fire({ icon: 'error', title: 'Oops...', text: 'Please select a status' })
             return
         }
-
-        submitForm(body);
+         submitForm(body);
     }
 
     return (
@@ -90,7 +89,6 @@ const FormAppointment = ({ appointment, closeModal, show, submitForm }: FormProp
                         control={control}
                         render={({ field }) => (
                             <div>
-                                <span>{field.value.name}</span>
                                 <select
                                     className="w-full border border-gray-400 rounded-md px-2 py-1"
                                     value={field.value.id}
@@ -116,13 +114,12 @@ const FormAppointment = ({ appointment, closeModal, show, submitForm }: FormProp
                     className="flex flex-col mb-4"
                 >
 
-                    <label className="block text-sm">Patient</label>
+                    <label className="block text-sm">Specialist</label>
                     <Controller
                         name="specialist"
                         control={control}
                         render={({ field }) => (
                             <div>
-                                <span>{field.value.name}</span>
                                 <select
                                     className="w-full border border-gray-400 rounded-md px-2 py-1"
                                     value={field.value.id}
